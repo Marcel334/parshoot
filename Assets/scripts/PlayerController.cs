@@ -11,11 +11,13 @@ public class NewBehaviourScript : MonoBehaviour
     float currentSpeed;
     Rigidbody rb;
     Vector3 direction;
+    private int health;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentSpeed = movementSpeed;
+        health = 100;
     }
 
     // Update is called once per frame
@@ -51,5 +53,14 @@ public class NewBehaviourScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
+    }
+
+    public void ChangeHealth(int count)
+    {
+        health -= count;
+        if (health <= 0)
+            {
+                this.enabled = false;
+            }
     }
 }
