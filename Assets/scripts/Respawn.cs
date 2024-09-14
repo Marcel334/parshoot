@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneLoader : MonoBehaviour
+public class SceneLoader1 : MonoBehaviour
 {
-    public void LoadScene()
+    public void LoadScene1()
     {
         SceneManager.LoadScene("Game");
-        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
